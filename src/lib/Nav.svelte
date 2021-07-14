@@ -1,29 +1,29 @@
 <script>
   import { createEventDispatcher } from 'svelte'
   import { page } from '$app/stores'
-  import { gsap } from "gsap"
-  import ScrollToPlugin from "gsap/dist/ScrollToPlugin"
+  // import { gsap } from "gsap"
+  // import ScrollToPlugin from "gsap/dist/ScrollToPlugin"
 
-  gsap.registerPlugin(ScrollToPlugin)
+  // gsap.registerPlugin(ScrollToPlugin)
 
   const dispatch = createEventDispatcher()
   export let isLoggedIn
 
-  const scrollToAnchor = (node, params) => {
+  // const scrollToAnchor = (node, params) => {
 
-    function goToAnchor(e) {
-      if(e) e.preventDefault()
-      gsap.to(window, { duration: 2, scrollTo: `#${params}`})
-    }
+  //   function goToAnchor(e) {
+  //     if(e) e.preventDefault()
+  //     gsap.to(window, { duration: 2, scrollTo: `#${params}`})
+  //   }
 
-    node.addEventListener('click', goToAnchor)
+  //   node.addEventListener('click', goToAnchor)
 
-    return {
-      onDestroy() {
-        node.removeEventListener('click', goToAnchor)
-      }
-    }
-  }
+  //   return {
+  //     onDestroy() {
+  //       node.removeEventListener('click', goToAnchor)
+  //     }
+  //   }
+  // }
 </script>
 
 <style>
@@ -46,8 +46,10 @@
       <div class="hidden lg:block absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
         <ul class="flex items-center space-x-16 text-lg font-bold">
           {#if $page.path === '/'}
-          <li><a use:scrollToAnchor={'blog'} sveltekit:prefetch class="hover:underline" href="/#blog">Blog</a></li>
-          <li><a use:scrollToAnchor={'actu'} sveltekit:prefetch class="hover:underline" href="/#actu">Actu</a></li>
+          <!-- <li><a use:scrollToAnchor={'blog'} sveltekit:prefetch class="hover:underline" href="/#blog">Blog</a></li>
+          <li><a use:scrollToAnchor={'actu'} sveltekit:prefetch class="hover:underline" href="/#actu">Actu</a></li> -->
+          <li><a sveltekit:prefetch class="hover:underline" href="/#blog">Blog</a></li>
+          <li><a sveltekit:prefetch class="hover:underline" href="/#actu">Actu</a></li>
           {:else}
           <li><a sveltekit:prefetch class="hover:underline" href="/#blog">Blog</a></li>
           <li><a sveltekit:prefetch class="hover:underline" href="/#actu">Actu</a></li>

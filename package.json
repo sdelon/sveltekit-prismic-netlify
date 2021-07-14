@@ -9,9 +9,9 @@
   "devDependencies": {
     "@prismicio/client": "^4.0.0",
     "@sveltejs/adapter-netlify": "^1.0.0-next.21",
-    "@sveltejs/kit": "^1.0.0-next.124",
+    "@sveltejs/kit": "^1.0.0-next.127",
     "@tailwindcss/typography": "^0.4.1",
-    "autoprefixer": "^10.3.0",
+    "autoprefixer": "^10.3.1",
     "cssnano": "^5.0.6",
     "gsap": "^3.7.0",
     "postcss": "^8.3.5",
